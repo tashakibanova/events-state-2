@@ -1,0 +1,129 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.icon-switch {
+  position: fixed; /* Зафиксируем иконку в верхнем углу */
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 10; /* Чтобы иконка была выше других элементов */
+}
+
+.icon-switch i {
+  font-size: 30px;
+}
+
+/* Стили для контейнера карточек в режиме плитки */
+.cards-container {
+  display: flex; /* Активируем Flexbox */
+  flex-wrap: wrap; /* Позволяем карточкам перетекать на следующую строку при нехватке места */
+  justify-content: space-between; /* Распределяем карточки по всей ширине контейнера */
+}
+
+/* Стили для карточек */
+.shop-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  margin: 10px;
+  padding: 16px;
+  width: calc(33.333% - 20px); /* Для карточек в виде плитки по умолчанию */
+  box-sizing: border-box; /* Учитываем отступы и границы в ширине */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Обеспечиваем корректный рендеринг изображений */
+.shop-card img {
+  max-width: 100%; 
+  height: auto; 
+  border-radius: 4px; /* Добавляем скругление для изображений */
+}
+
+/* Стили для режима списка */
+.list-view {
+  display: block; /* Блоковый режим для списка */
+}
+
+.list-view .shop-card {
+  width: 100%; /* Для карточек в виде списка */
+  padding: 0; 
+  margin-bottom: 20px; /* Отступ снизу между карточками */
+}
+
+/* Стили для элементов в режиме списка */
+.shop-item {
+  display: flex; /* Используем флекс-контейнер для элементов списка */
+  justify-content: space-between; /* Распределяем элементы по горизонтали */
+  width: 100%; /* Задаем ширину 100% для элементов списка */
+  padding: 15px; /* Отступы внутри элемента списка */
+  box-sizing: border-box; /* Учитываем отступы и границы в ширине */
+}
+
+.shop-item img {
+  flex-shrink: 0; /* Не позволяет изображению сжиматься */
+  width: 100px; /* Ширина изображения */
+  height: auto;
+  margin-right: 10px; /* Отступ справа от изображения */
+}
+
+/* Стили для деталей карточки в режиме списка */
+.shop-item-details {
+  display: flex; /* Используем флекс-контейнер для деталей карточки */
+  flex-direction: row; /* Располагаем элементы в строку */
+  flex-grow: 1; /* Заставляем этот контейнер занимать оставшееся пространство */
+  width: 100%; /* Ширина 100% для уместности */
+}
+
+.shop-item-details h3, 
+.shop-item-details .color, 
+.shop-item-details .price {
+  margin: 0; /* Убираем отступы на внешней стороне */
+  padding: 2px 10px; /* Устанавливаем отступы между строками */
+  flex-grow: 1; /* Позволяем элементам занимать равную ширину */
+  overflow-wrap: break-word; /* Перенос длинных слов на новую строку */
+  text-transform: capitalize; /* Первую букву в названии с заглавной */
+}
+
+/* Красный цвет для цены */
+.price {
+  color: red; 
+  font-weight: bold; 
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+  .shop-card {
+    width: calc(50% - 20px); /* Две карточки в строке на экранах меньше 768px */
+  }
+}
+
+@media (max-width: 480px) {
+  .shop-card {
+    width: calc(100% - 20px); /* Одна карточка в строке на экранах меньше 480px */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
